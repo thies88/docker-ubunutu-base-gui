@@ -20,7 +20,8 @@ RUN \
 	git \
 	cmake \
 	### For running
-    openbox \
+	nginx \
+    	openbox \
 	python-numpy \
 	#xterm \
 	#openssh-client \
@@ -54,7 +55,7 @@ autoreconf -v --install  && \
 make install  && \
 
  echo "**** cleanup ****" && \
- apt-get autoremove -y --purge binutils-x86-64-linux-gnu libgcc-7-dev git cmake autoconf automake build-essential dpkg-dev default-jdk-headless default-jre java-common openjdk-11-jre-headless openjdk-11-jdk openjdk-11-jdk-headless xtrans-dev x11proto-core-dev x11proto-damage-dev x11proto-dev gcc-7 cpp-7  && \
+ apt-get autoremove -y --purge libgcc-7-dev git cmake autoconf automake build-essential dpkg-dev default-jdk-headless default-jre java-common openjdk-11-jre-headless openjdk-11-jdk openjdk-11-jdk-headless xtrans-dev x11proto-core-dev x11proto-damage-dev x11proto-dev gcc-7 cpp-7  && \
  apt-get clean && \
  rm -rf \
 	/tmp/* \
@@ -70,7 +71,8 @@ make install  && \
 	/usr/share/locale/* \
 	#
 	/libvncserver \
-	/x11vnc
+	/x11vnc \
+	/etc/nginx/default
 
 # add local files
 COPY root/ /
