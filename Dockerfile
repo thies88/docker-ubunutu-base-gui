@@ -72,6 +72,7 @@ make install  && \
 	/libvncserver \
 	/x11vnc
 
-COPY /root/ /
+# add local files
+COPY root/ /
 
 ENTRYPOINT ["/bin/bash", "/init"]
